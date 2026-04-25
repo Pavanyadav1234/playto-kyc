@@ -1,16 +1,36 @@
-# React + Vite
+# Playto KYC Pipeline
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A KYC onboarding system for merchants built with Django + React.
 
-Currently, two official plugins are available:
+## Live Demo
+- Frontend: https://playto-kyc-frontend-vewl.onrender.com
+- Backend API: https://playto-kyc-backend-hw1z.onrender.com
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Test Login Credentials
+- Reviewer: `reviewer1` / `reviewer123`
+- Merchant 1: `merchant1` / `merchant123` (draft state)
+- Merchant 2: `merchant2` / `merchant123` (under_review state)
 
-## React Compiler
+## Setup Instructions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Backend
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+python kyc/seed.py
+python manage.py runserver
 
-## Expanding the ESLint configuration
+### Frontend
+cd frontend
+npm install
+npm run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Open http://localhost:5173
+
+## Tech Stack
+- Backend: Django + Django REST Framework
+- Frontend: React + Tailwind CSS + Vite
+- Database: SQLite
+- Auth: Token Authentication
