@@ -17,10 +17,10 @@ export default function ReviewerDashboard() {
   const fetchData = async () => {
     try {
       const [queueRes, metricsRes] = await Promise.all([
-        axios.get('http://127.0.0.1:8000/api/v1/reviewer/queue/', {
+        axios.get('https://playto-kyc-backend-hw1z.onrender.com/api/v1/reviewer/queue/', {
           headers: { Authorization: `Token ${token}` }
         }),
-        axios.get('http://127.0.0.1:8000/api/v1/reviewer/metrics/', {
+        axios.get('https://playto-kyc-backend-hw1z.onrender.com/api/v1/reviewer/metrics/', {
           headers: { Authorization: `Token ${token}` }
         })
       ])

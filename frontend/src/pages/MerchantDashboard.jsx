@@ -15,7 +15,7 @@ export default function MerchantDashboard() {
 
   const fetchSubmissions = async () => {
     try {
-      const res = await axios.get('http://127.0.0.1:8000/api/v1/submissions/', {
+      const res = await axios.get('https://playto-kyc-backend-hw1z.onrender.com/api/v1/submissions/', {
         headers: { Authorization: 'Token ' + token }
       })
       setSubmissions(res.data)
@@ -27,7 +27,7 @@ export default function MerchantDashboard() {
 
   const createNew = async () => {
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/v1/submissions/', {
+      const res = await axios.post('https://playto-kyc-backend-hw1z.onrender.com/api/v1/submissions/', {
         full_name: 'New Submission',
         email: 'placeholder@email.com',
         phone: '0000000000'

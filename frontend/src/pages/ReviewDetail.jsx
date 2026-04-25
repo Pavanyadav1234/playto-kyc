@@ -17,7 +17,7 @@ export default function ReviewDetail() {
 
   const fetchSubmission = async () => {
     try {
-      const res = await axios.get('http://127.0.0.1:8000/api/v1/reviewer/queue/' + id + '/', {
+      const res = await axios.get('https://playto-kyc-backend-hw1z.onrender.com/api/v1/reviewer/queue/' + id + '/', {
         headers: { Authorization: 'Token ' + token }
       })
       setSub(res.data)
@@ -30,7 +30,7 @@ export default function ReviewDetail() {
   const doAction = async (action) => {
     try {
       const res = await axios.post(
-        'http://127.0.0.1:8000/api/v1/reviewer/queue/' + id + '/action/',
+        'https://playto-kyc-backend-hw1z.onrender.com/api/v1/reviewer/queue/' + id + '/action/',
         { action, note },
         { headers: { Authorization: 'Token ' + token } }
       )
@@ -44,7 +44,7 @@ export default function ReviewDetail() {
   if (loading) return <div className="min-h-screen flex items-center justify-center">Loading...</div>
   if (!sub) return <div className="min-h-screen flex items-center justify-center">Not found</div>
 
-  const docUrl = (path) => 'http://127.0.0.1:8000' + path
+  const docUrl = (path) => 'https://playto-kyc-backend-hw1z.onrender.com' + path
 
   return (
     <div className="min-h-screen bg-gray-50">

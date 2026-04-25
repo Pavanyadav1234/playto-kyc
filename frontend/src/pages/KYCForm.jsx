@@ -23,7 +23,7 @@ export default function KYCForm() {
 
   const fetchSubmission = async () => {
     try {
-      const res = await axios.get(`http://127.0.0.1:8000/api/v1/submissions/${id}/`, {
+      const res = await axios.get(`https://playto-kyc-backend-hw1z.onrender.com/api/v1/submissions/${id}/`, {
         headers: { Authorization: `Token ${token}` }
       })
       const d = res.data
@@ -47,7 +47,7 @@ export default function KYCForm() {
       const data = new FormData()
       Object.entries(form).forEach(([k, v]) => data.append(k, v))
       Object.entries(files).forEach(([k, v]) => { if (v) data.append(k, v) })
-      await axios.patch(`http://127.0.0.1:8000/api/v1/submissions/${id}/`, data, {
+      await axios.patch(`https://playto-kyc-backend-hw1z.onrender.com/api/v1/submissions/${id}/`, data, {
         headers: { Authorization: `Token ${token}`, 'Content-Type': 'multipart/form-data' }
       })
       setMessage('Saved successfully!')
@@ -60,7 +60,7 @@ export default function KYCForm() {
   const handleSubmit = async () => {
     await handleSave()
     try {
-      await axios.post(`http://127.0.0.1:8000/api/v1/submissions/${id}/submit/`, {}, {
+      await axios.post(`https://playto-kyc-backend-hw1z.onrender.com/api/v1/submissions/${id}/submit/`, {}, {
         headers: { Authorization: `Token ${token}` }
       })
       setMessage('Submitted for review!')

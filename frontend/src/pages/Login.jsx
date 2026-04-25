@@ -10,7 +10,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/v1/auth/login/', form)
+      const res = await axios.post('https://playto-kyc-backend-hw1z.onrender.com/api/v1/auth/login/', form)
       localStorage.setItem('token', res.data.token)
       localStorage.setItem('role', res.data.role)
       localStorage.setItem('username', res.data.username)
