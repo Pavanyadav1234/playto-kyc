@@ -44,7 +44,7 @@ export default function ReviewDetail() {
   if (loading) return <div className="min-h-screen flex items-center justify-center">Loading...</div>
   if (!sub) return <div className="min-h-screen flex items-center justify-center">Not found</div>
 
-  const docUrl = (path) => 'http://127.0.0.1:8000' + path
+ const docUrl = (path) => 'http://127.0.0.1:8000' + path
 
   return (
     <div className="min-h-screen bg-gray-50">
