@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Playto KYC Pipeline
 
 A KYC onboarding system for merchants built with Django + React.
@@ -36,4 +34,4 @@ Open http://localhost:5173
 - Frontend: React + Tailwind CSS + Vite
 - Database: SQLite
 - Auth: Token Authentication
->>>>>>> c7ab87eda7cd7c7668d06c7f99a5754ec7352b51
+
